@@ -31,22 +31,22 @@
             this.openBtn = new System.Windows.Forms.Button();
             this.saveBtn = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.sizeRadio = new System.Windows.Forms.RadioButton();
+            this.countRadio = new System.Windows.Forms.RadioButton();
+            this.valueTB = new System.Windows.Forms.TextBox();
+            this.filePB = new System.Windows.Forms.ProgressBar();
             this.openFileTB = new System.Windows.Forms.TextBox();
             this.saveDirctTB = new System.Windows.Forms.TextBox();
             this.unitCombo = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.startBtn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // openBtn
             // 
-            this.openBtn.Location = new System.Drawing.Point(174, 21);
+            this.openBtn.Location = new System.Drawing.Point(174, 19);
             this.openBtn.Name = "openBtn";
-            this.openBtn.Size = new System.Drawing.Size(75, 23);
+            this.openBtn.Size = new System.Drawing.Size(75, 21);
             this.openBtn.TabIndex = 1;
             this.openBtn.Text = "Open";
             this.openBtn.UseVisualStyleBackColor = true;
@@ -54,9 +54,9 @@
             // 
             // saveBtn
             // 
-            this.saveBtn.Location = new System.Drawing.Point(174, 55);
+            this.saveBtn.Location = new System.Drawing.Point(174, 51);
             this.saveBtn.Name = "saveBtn";
-            this.saveBtn.Size = new System.Drawing.Size(75, 23);
+            this.saveBtn.Size = new System.Drawing.Size(75, 21);
             this.saveBtn.TabIndex = 3;
             this.saveBtn.Text = "Save";
             this.saveBtn.UseVisualStyleBackColor = true;
@@ -64,65 +64,67 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Location = new System.Drawing.Point(31, 100);
+            this.groupBox1.Controls.Add(this.sizeRadio);
+            this.groupBox1.Controls.Add(this.countRadio);
+            this.groupBox1.Location = new System.Drawing.Point(31, 80);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(239, 75);
+            this.groupBox1.Size = new System.Drawing.Size(218, 70);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             // 
-            // radioButton2
+            // sizeRadio
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(133, 30);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(60, 17);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.Text = "By Size";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.sizeRadio.AutoSize = true;
+            this.sizeRadio.Checked = true;
+            this.sizeRadio.Location = new System.Drawing.Point(133, 28);
+            this.sizeRadio.Name = "sizeRadio";
+            this.sizeRadio.Size = new System.Drawing.Size(65, 16);
+            this.sizeRadio.TabIndex = 1;
+            this.sizeRadio.TabStop = true;
+            this.sizeRadio.Text = "By Size";
+            this.sizeRadio.UseVisualStyleBackColor = true;
+            this.sizeRadio.CheckedChanged += new System.EventHandler(this.sizeRadio_CheckedChanged);
             // 
-            // radioButton1
+            // countRadio
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Checked = true;
-            this.radioButton1.Location = new System.Drawing.Point(6, 30);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(68, 17);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "By Count";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.countRadio.AutoSize = true;
+            this.countRadio.Location = new System.Drawing.Point(6, 28);
+            this.countRadio.Name = "countRadio";
+            this.countRadio.Size = new System.Drawing.Size(71, 16);
+            this.countRadio.TabIndex = 0;
+            this.countRadio.Text = "By Count";
+            this.countRadio.UseVisualStyleBackColor = true;
+            this.countRadio.CheckedChanged += new System.EventHandler(this.countRadio_CheckedChanged);
             // 
-            // textBox1
+            // valueTB
             // 
-            this.textBox1.Location = new System.Drawing.Point(31, 181);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(85, 20);
-            this.textBox1.TabIndex = 5;
-            this.textBox1.Text = "1";
+            this.valueTB.Location = new System.Drawing.Point(31, 156);
+            this.valueTB.Name = "valueTB";
+            this.valueTB.Size = new System.Drawing.Size(85, 21);
+            this.valueTB.TabIndex = 5;
+            this.valueTB.Text = "1";
             // 
-            // progressBar1
+            // filePB
             // 
-            this.progressBar1.Location = new System.Drawing.Point(31, 236);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(239, 23);
-            this.progressBar1.TabIndex = 7;
+            this.filePB.Location = new System.Drawing.Point(31, 218);
+            this.filePB.Name = "filePB";
+            this.filePB.Size = new System.Drawing.Size(218, 21);
+            this.filePB.TabIndex = 7;
             // 
             // openFileTB
             // 
-            this.openFileTB.Location = new System.Drawing.Point(31, 21);
+            this.openFileTB.Location = new System.Drawing.Point(31, 19);
             this.openFileTB.Name = "openFileTB";
             this.openFileTB.ReadOnly = true;
-            this.openFileTB.Size = new System.Drawing.Size(100, 20);
+            this.openFileTB.Size = new System.Drawing.Size(137, 21);
             this.openFileTB.TabIndex = 8;
             // 
             // saveDirctTB
             // 
-            this.saveDirctTB.Location = new System.Drawing.Point(31, 57);
+            this.saveDirctTB.Location = new System.Drawing.Point(31, 53);
             this.saveDirctTB.Name = "saveDirctTB";
             this.saveDirctTB.ReadOnly = true;
-            this.saveDirctTB.Size = new System.Drawing.Size(100, 20);
+            this.saveDirctTB.Size = new System.Drawing.Size(137, 21);
             this.saveDirctTB.TabIndex = 9;
             // 
             // unitCombo
@@ -130,38 +132,43 @@
             this.unitCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.unitCombo.FormattingEnabled = true;
             this.unitCombo.Items.AddRange(new object[] {
-            "Byte",
+            "B",
             "KB",
             "MB",
             "GB"});
-            this.unitCombo.Location = new System.Drawing.Point(123, 179);
+            this.unitCombo.Location = new System.Drawing.Point(128, 156);
             this.unitCombo.Name = "unitCombo";
-            this.unitCombo.Size = new System.Drawing.Size(121, 21);
+            this.unitCombo.Size = new System.Drawing.Size(121, 20);
             this.unitCombo.TabIndex = 10;
             // 
-            // button1
+            // startBtn
             // 
-            this.button1.Location = new System.Drawing.Point(31, 207);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Start";
-            this.button1.UseVisualStyleBackColor = true;
+            this.startBtn.Location = new System.Drawing.Point(31, 183);
+            this.startBtn.Name = "startBtn";
+            this.startBtn.Size = new System.Drawing.Size(75, 21);
+            this.startBtn.TabIndex = 11;
+            this.startBtn.Text = "Start";
+            this.startBtn.UseVisualStyleBackColor = true;
+            this.startBtn.Click += new System.EventHandler(this.startBtn_Click);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(301, 284);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(278, 256);
+            this.Controls.Add(this.startBtn);
             this.Controls.Add(this.unitCombo);
             this.Controls.Add(this.saveDirctTB);
             this.Controls.Add(this.openFileTB);
-            this.Controls.Add(this.progressBar1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.filePB);
+            this.Controls.Add(this.valueTB);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.saveBtn);
             this.Controls.Add(this.openBtn);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(294, 294);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(294, 294);
             this.Name = "Form1";
             this.Text = "Form1";
             this.groupBox1.ResumeLayout(false);
@@ -176,14 +183,14 @@
         private System.Windows.Forms.Button openBtn;
         private System.Windows.Forms.Button saveBtn;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.RadioButton sizeRadio;
+        private System.Windows.Forms.RadioButton countRadio;
+        private System.Windows.Forms.TextBox valueTB;
+        private System.Windows.Forms.ProgressBar filePB;
         private System.Windows.Forms.TextBox openFileTB;
         private System.Windows.Forms.TextBox saveDirctTB;
         private System.Windows.Forms.ComboBox unitCombo;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button startBtn;
     }
 }
 
