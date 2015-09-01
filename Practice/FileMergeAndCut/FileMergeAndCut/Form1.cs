@@ -215,6 +215,7 @@ namespace FileMergeAndCut
 
             FileStream fw = new FileStream(selectTB.Text+@"\"+selectFileName+selectFileExtension,FileMode.Create);
             int readCount = 0;
+            mergePB.Value = 0;
             byte[] bytes = new byte[1024*1024*3];
             for (int i = 1; i <= mergeFileMaxNum; i++)
 			{
