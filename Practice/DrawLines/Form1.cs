@@ -33,7 +33,8 @@ namespace DrawLines
             timer.Tick += Timer_Tick;
             timer.Start();
 
-            drawString();
+            //drawString();
+            drawBitmap();
         }
 
         private void Timer_Tick(object sender, EventArgs e)
@@ -42,6 +43,13 @@ namespace DrawLines
             //drawRect();
         }
 
+
+        public void drawBitmap()
+        {
+            Bitmap bmp = new Bitmap("planet.bmp");
+            device.DrawImage(bmp, 0, 0);
+            device.DrawImage(bmp, 400, 10, 64, 64);
+        }
         public void drawString()
         {
             string[] text = { "据《福布斯》网络版报道","野村证券和加拿大皇家银行发表投资报告称",
