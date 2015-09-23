@@ -60,7 +60,7 @@ namespace RPG
         public Bitmap CutBitmap(string fileName, int x, int y, int w, int h)
         {
             Bitmap source = LoadBitmap(fileName);
-            return CutBitmap(ref source,x ,y, w, h);
+            return CutBitmap(ref source,x,y, w, h);
         }
 
         public void DrawBitmap(ref Bitmap bmp, int x, int y , int w, int h)
@@ -72,6 +72,10 @@ namespace RPG
             mDevice.DrawImageUnscaled(bmp, 0, 0);
         }
 
+        public void Clear()
+        {
+            mDevice.Clear(Color.White);
+        }
         ~Game()
         {
             mBmp.Dispose();

@@ -40,6 +40,18 @@ namespace RPG
             }
         }
 
+        public PointF Pos
+        {
+            get
+            {
+                return mPos;
+            }
+            set
+            {
+                mPos = value;
+            }
+        }
+
         public float Y
         {
             get 
@@ -61,6 +73,14 @@ namespace RPG
             set
             {
                 mPos.X = value;
+            }
+        }
+
+        public void Dispose()
+        {
+            for (int i = 0; i < mBitmaps.Length; i++)
+            {
+                mBitmaps[i].Dispose();
             }
         }
 
