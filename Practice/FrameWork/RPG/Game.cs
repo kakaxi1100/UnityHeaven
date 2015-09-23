@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -11,9 +12,27 @@ namespace RPG
     {
         Bitmap mBmp;
         Graphics mDevice;
-        public Game()
+        public Game(int w, int h)
         {
+            Trace.WriteLine("Game init");
+            mBmp = new Bitmap(w, h);
+            mDevice = Graphics.FromImage(mBmp);
+        }
 
+        public Bitmap BMP
+        {
+            get
+            {
+                return mBmp;
+            }
+        }
+
+        public Graphics Device
+        {
+            get
+            {
+                return mDevice;
+            }
         }
 
         public Bitmap LoadBitmap(string fileName)
@@ -35,25 +54,27 @@ namespace RPG
         {
             Bitmap temp = new Bitmap(w, h);
             Graphics g = Graphics.FromImage(temp);
-            g.DrawImage(source, x, y, w, h);
+            g.DrawImage(source, 0, 0, new Rectangle(x, y ,w, h), GraphicsUnit.Pixel);
             return temp;
         }
         public Bitmap CutBitmap(string fileName, int x, int y, int w, int h)
         {
             Bitmap source = LoadBitmap(fileName);
-            Bitmap temp = new Bitmap(w, h);
-            Graphics g = Graphics.FromImage(temp);
-            g.DrawImage(source, x, y, w, h);
-            return temp;
+            return CutBitmap(ref source,x ,y, w, h);
         }
 
         public void DrawBitmap(ref Bitmap bmp, int x, int y , int w, int h)
         {
             mDevice.DrawImageUnscaled(bmp, x, y, w, h);
         }
+        public void DrawBitmap(ref Bitmap bmp)
+        {
+            mDevice.DrawImageUnscaled(bmp, 0, 0);
+        }
+
         ~Game()
         {
-
+            mBmp.Dispose();
         }
     }
 }

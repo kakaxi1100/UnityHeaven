@@ -29,9 +29,14 @@ namespace RPG
 
         public Bitmap[] Bitmaps
         {
+            get
+            {
+                return mBitmaps;
+            }
             set
             {
                 mBitmaps = value;
+                mTotalFrames = mBitmaps.Length;
             }
         }
 
@@ -75,13 +80,14 @@ namespace RPG
             {
                 return;
             }
-            Bitmap bitmap = mBitmaps[mCurrentFrame];
-            mCurrentFrame++;
+
+            Bitmap bitmap = mBitmaps[mCurrentFrame++];
+            mGraphics.DrawImage(bitmap, mPos);
+
             if (mCurrentFrame == mTotalFrames - 1)
             {
                 mCurrentFrame = 0;
             }
-            mGraphics.DrawImage(bitmap, mPos);
         }
     }
 }
