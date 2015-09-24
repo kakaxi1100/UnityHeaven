@@ -103,6 +103,7 @@ namespace Framework
         {
             while (!mGameOver)
             {
+                //form 消息循环队列事件
                 Application.DoEvents();
                 mCurrentTime = Environment.TickCount;
                 if (mCurrentTime > mStartTime + 32)
@@ -120,6 +121,7 @@ namespace Framework
                 }
             }
             GameEnd();
+            // form 退出
             Application.Exit();
         }
 

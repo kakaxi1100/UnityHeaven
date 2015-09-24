@@ -84,6 +84,19 @@ namespace RPG
             }
         }
 
+        public Rectangle Bounds
+        {
+            get
+            {
+                return new Rectangle( Convert.ToInt32(mPos.X), Convert.ToInt32(mPos.Y), mBitmaps[mCurrentFrame].Width, mBitmaps[mCurrentFrame].Height);
+            }
+        }
+
+        public bool IsColliding(ref Sprite other)
+        {
+            return Bounds.IntersectsWith(other.Bounds);
+        }
+
         public void play()
         {
             isRunning = true;
