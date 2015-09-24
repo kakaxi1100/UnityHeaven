@@ -14,12 +14,12 @@ namespace ArcheryGame
     public partial class Form1 : Form
     {
         private Game mGame;
-        private Bitmap mGress;
+        private Bitmap mGrass;
         private Sprite[] mDragon;
         private Sprite[] mSkeleton;
         private Sprite[] mZombie;
         private Sprite[] mArcher;
-        private Sprite[] mArrow;
+        private Bitmap mArrow;
         private Sprite[] mSpider;
         private bool mGameOver;
         private int mCurrentTime;
@@ -36,7 +36,9 @@ namespace ArcheryGame
             mCurrentTime = 0;
             mStartTime = -100;
             mGame = new Game(this.pictureBox1.Size.Width, this.pictureBox1.Size.Height);
-            mGress = mGame.LoadBitmap("grass.bmp");
+            #region grass
+            mGrass = mGame.LoadBitmap("grass.bmp");
+            #endregion
             #region dragon
             //make dragon sprite
             mDragon = new Sprite[2];
@@ -144,29 +146,24 @@ namespace ArcheryGame
             mZombie[1] = zombieright;
             mZombie[1].play();
             #endregion
-            //make zombie sprite
+            #region archer
+            //make archer sprite
             mArcher = new Sprite[1];
             Bitmap archerBmp = mGame.LoadBitmap("archer_attack.png");
-            Sprite archerleft = new Sprite(mGame.Device);
-            Sprite archerright = new Sprite(mGame.Device);
-            for (int i = 2; i < 7; i += 4)//行
+            Sprite archer = new Sprite(mGame.Device);
+            Bitmap[] archerTemp = new Bitmap[10];
+            for (int j = 0; j < 10; j++)//列
             {
-                Bitmap[] temp = new Bitmap[8];
-                for (int j = 0; j < 9; j++)//列
-                {
-                    temp[j] = mGame.CutBitmap(ref archerBmp, j * 96, i * 96, 96, 96);
-                }
-                if (i == 2)
-                {
-                    archerright.Bitmaps = temp;
-                }
-                else if (i == 6)
-                {
-                    archerleft.Bitmaps = temp;
-                }
+                archerTemp[j] = mGame.CutBitmap(ref archerBmp, j * 96, 0, 96, 96);
             }
-            mArcher[0] = archerleft;
+
+            mArcher[0] = archer;
             mArcher[0].play();
+            #endregion
+            #region arrow
+            //make arrow bitmap
+            mArrow = mGame.CutBitmap("arrow.png", 0, 0, 32, 32);
+            #endregion
         }
     }
 }
