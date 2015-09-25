@@ -156,7 +156,7 @@ namespace ArcheryGame
             {
                 archerTemp[j] = mGame.CutBitmap(ref archerBmp, j * 96, 0, 96, 96);
             }
-
+            archer.Bitmaps = archerTemp;
             mArcher[0] = archer;
             mArcher[0].play();
             #endregion
@@ -164,6 +164,51 @@ namespace ArcheryGame
             //make arrow bitmap
             mArrow = mGame.CutBitmap("arrow.png", 0, 0, 32, 32);
             #endregion
+        }
+
+        private void Main()
+        {
+            while (!mGameOver)
+            {
+                Application.DoEvents(); mCurrentTime = Environment.TickCount;
+                if (mCurrentTime > mStartTime + 32)
+                {
+                    //
+                    mGame.Clear();
+                    pictureBox1.Image = mGame.BMP;
+                    mStartTime = mCurrentTime;
+                    //draw grass
+                    mGame.DrawBitmap(ref mGrass);
+
+                    mDragon[0].update();
+                    //mZombie[0].update();
+                }
+            }
+            GameEnd();
+            // form 退出
+            Application.Exit();
+        }
+
+        private void GameEnd()
+        {
+            mGameOver = true;
+            /*mGrass.Dispose();
+            mGame.BMP.Dispose();
+            for (int i = 0; i < mDragon.Length; i++)
+            {
+                mDragon[i].Dispose();
+            }*/
+        }
+
+        private void Form1_Shown(object sender, EventArgs e)
+        {
+            Init();
+            Main();
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            mGameOver = true;
         }
     }
 }

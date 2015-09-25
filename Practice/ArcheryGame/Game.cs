@@ -54,7 +54,8 @@ namespace RPG
         {
             Bitmap temp = new Bitmap(w, h);
             Graphics g = Graphics.FromImage(temp);
-            g.DrawImage(source, 0, 0, new Rectangle(x, y ,w, h), GraphicsUnit.Pixel);
+            
+            g.DrawImage(source, 0, 0, new Rectangle(0, 0 ,w, h), GraphicsUnit.Pixel);
             return temp;
         }
         public Bitmap CutBitmap(string fileName, int x, int y, int w, int h)
