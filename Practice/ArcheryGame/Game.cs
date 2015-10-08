@@ -54,14 +54,16 @@ namespace RPG
         {
             Bitmap temp = new Bitmap(w, h);
             Graphics g = Graphics.FromImage(temp);
-            
-            g.DrawImage(source, 0, 0, new Rectangle(0, 0 ,w, h), GraphicsUnit.Pixel);
+            Pen p = new Pen(Color.Black);
+            g.FillRectangle(p.Brush, new Rectangle(0, 0, temp.Width, temp.Height));
+            //g.DrawImage(source, 0, 0, new Rectangle(x, y, w, h), GraphicsUnit.Pixel);
             return temp;
         }
+
         public Bitmap CutBitmap(string fileName, int x, int y, int w, int h)
         {
             Bitmap source = LoadBitmap(fileName);
-            return CutBitmap(ref source,x,y, w, h);
+            return CutBitmap(ref source, x, y, w, h);
         }
 
         public void DrawBitmap(ref Bitmap bmp, int x, int y , int w, int h)

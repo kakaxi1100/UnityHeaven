@@ -29,7 +29,7 @@ namespace ArcheryGame
         {
             InitializeComponent();
         }
-
+        Bitmap dragonBmp;
         private void Init()
         {
             mGameOver = false;
@@ -37,12 +37,13 @@ namespace ArcheryGame
             mStartTime = -100;
             mGame = new Game(this.pictureBox1.Size.Width, this.pictureBox1.Size.Height);
             #region grass
-            mGrass = mGame.LoadBitmap("grass.bmp");
+           // mGrass = mGame.LoadBitmap("grass.bmp");
             #endregion
             #region dragon
             //make dragon sprite
             mDragon = new Sprite[2];
-            Bitmap dragonBmp = mGame.LoadBitmap("dragonflying.png");
+            dragonBmp = mGame.LoadBitmap("dragonflying.png");
+            dragonBmp.SetResolution(96, 96);
             Sprite dragonleft = new Sprite(mGame.Device);
             Sprite dragonright = new Sprite(mGame.Device);
             for (int i = 2; i < 7; i += 4)
@@ -178,10 +179,9 @@ namespace ArcheryGame
                     pictureBox1.Image = mGame.BMP;
                     mStartTime = mCurrentTime;
                     //draw grass
-                    mGame.DrawBitmap(ref mGrass);
-
-                    mDragon[0].update();
-                    //mZombie[0].update();
+                    //mGame.DrawBitmap(ref mGrass);
+                    mGame.DrawBitmap(ref dragonBmp);
+                    //mDragon[0].update();
                 }
             }
             GameEnd();
