@@ -27,6 +27,22 @@ namespace RPG
             }
         }
 
+        public int CurrentFrame
+        {
+            get
+            {
+                return mCurrentFrame;
+            }
+        }
+
+        public int TotalFrames
+        {
+            get
+            {
+                return mTotalFrames;
+            }
+        }
+
         public Bitmap[] Bitmaps
         {
             get
@@ -97,6 +113,18 @@ namespace RPG
             return Bounds.IntersectsWith(other.Bounds);
         }
 
+        public void gotoAndPlay(int frame)
+        {
+            mCurrentFrame = frame;
+            play();
+        }
+
+        public void gotoAndStop(int frame)
+        {
+            mCurrentFrame = frame;
+            stop();
+        }
+
         public void play()
         {
             isRunning = true;
@@ -109,17 +137,16 @@ namespace RPG
 
         public void update()
         {
-            if (!isRunning)
-            {
-                return;
-            }
-
-            Bitmap bitmap = mBitmaps[mCurrentFrame++];
+            Bitmap bitmap = mBitmaps[mCurrentFrame];
             mGraphics.DrawImage(bitmap, mPos);
 
-            if (mCurrentFrame == mTotalFrames - 1)
+            if (isRunning)
             {
-                mCurrentFrame = 0;
+                mCurrentFrame++;
+                if (mCurrentFrame == mTotalFrames)
+                {
+                    mCurrentFrame = 0;
+                }
             }
         }
     }
