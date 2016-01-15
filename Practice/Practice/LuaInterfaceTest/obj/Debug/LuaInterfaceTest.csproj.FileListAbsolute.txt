@@ -1,0 +1,11 @@
+D:\Ares\project\UnityHeaven\Practice\Practice\LuaInterfaceTest\bin\Debug\LuaInterfaceTest.exe.config
+D:\Ares\project\UnityHeaven\Practice\Practice\LuaInterfaceTest\bin\Debug\LuaInterfaceTest.exe
+D:\Ares\project\UnityHeaven\Practice\Practice\LuaInterfaceTest\bin\Debug\LuaInterfaceTest.pdb
+D:\Ares\project\UnityHeaven\Practice\Practice\LuaInterfaceTest\bin\Debug\NLua.dll
+D:\Ares\project\UnityHeaven\Practice\Practice\LuaInterfaceTest\obj\Debug\LuaInterfaceTest.csprojResolveAssemblyReference.cache
+D:\Ares\project\UnityHeaven\Practice\Practice\LuaInterfaceTest\obj\Debug\LuaInterfaceTest.Form1.resources
+D:\Ares\project\UnityHeaven\Practice\Practice\LuaInterfaceTest\obj\Debug\LuaInterfaceTest.Properties.Resources.resources
+D:\Ares\project\UnityHeaven\Practice\Practice\LuaInterfaceTest\obj\Debug\LuaInterfaceTest.csproj.GenerateResource.Cache
+D:\Ares\project\UnityHeaven\Practice\Practice\LuaInterfaceTest\obj\Debug\LuaInterfaceTest.exe
+D:\Ares\project\UnityHeaven\Practice\Practice\LuaInterfaceTest\obj\Debug\LuaInterfaceTest.pdb
+D:\Ares\project\UnityHeaven\Practice\Practice\LuaInterfaceTest\bin\Debug\KopiLua.dll
